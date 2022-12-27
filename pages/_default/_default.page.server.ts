@@ -3,7 +3,7 @@ import { PageContext } from "./types";
 import { renderToString } from "vue/server-renderer";
 import { escapeInject, dangerouslySkipEscape } from "vite-plugin-ssr";
 import { createPageApp } from "./app";
-import "/assets/styles/index.css";
+// import "/assets/styles/index.css";
 
 // By default we do not want to pre-render our pages.
 // This makes pre-rendering opt-in by adding `doNotPrerender = false` to pages.
@@ -16,8 +16,12 @@ export const passToClient = [
 ];
 
 export async function render(pageContext: PageContextBuiltIn & PageContext) {
+
   const page = createPageApp(pageContext, false);
   const pageHtml = pageContext.Page ? await renderToString(page) : "";
+  console.log("Current _default-server-side Client:Boolean", pageHtml == null);
+
+
   const title = pageContext.exports.title ? pageContext.exports.title + " — " : "";
   const faviconUrl = import.meta.env.BASE_URL + "logo.svg";
 
