@@ -171,6 +171,7 @@
 </style>
 
 <script setup lang="ts">
+
   import { defineAsyncComponent, ref } from "vue"; 
   // Components
   import Header from "@/components/layouts/Header.vue"

@@ -8,6 +8,7 @@
     "preview:static": "vite build && ts-node preview static"
   },
   "dependencies": {
+    "tailwindcss": "^3.2.4",
     "vite-plugin-ssr": "^0.4.13",
     "vue": "^3.2.37",
     "vuex": "^4.1.0"

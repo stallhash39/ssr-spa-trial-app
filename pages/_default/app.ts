@@ -7,6 +7,9 @@ import PageShell from './PageShell.vue'
 
 import { usePageContext, setPageContext } from './usePageContext';
 
+// TIMESTAMP LOG
+import { scaffold } from '../../utils/scaffold';
+
 // Define Create Function for SSR or SPA
 export function createPageApp(pageContext: PageContextBuiltIn & PageContext, clientOnly: boolean) {
 
@@ -34,9 +37,10 @@ export function createPageApp(pageContext: PageContextBuiltIn & PageContext, cli
 
   // Shared the Page Context from Server Side to Front-end Side 
   const page = createAppFunc(AppComponent);
-  page.provide("pageContext", pageContext);
+  // page.provide("pageContext", pageContext);
   // return page;
 
+  scaffold(page);
   setPageContext(page, pageContext)
 
   return page; 
