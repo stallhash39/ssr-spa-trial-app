@@ -1,5 +1,6 @@
 <template>
   <Header @openModal="OpenSignInSignUpModal" />
+
   <div class="bg-f5fbff lg:pt-72px lg:pb-72px pt-48px pb-56px text-center">
     <div class="px-lg-0 px-4">
       <p class="font-NunitoWebBold lg:text-40px text-40px leading-1.2">
@@ -15,6 +16,7 @@
         <CustomButton label="See How It Works" type="light" />
       </div>
     </div>
+  
     <div class="lg:mt-72px mt-56px relative overflow-hidden">
       <div
         class="flex lg:gap-10 gap-4 flex-nowrap whitespace-nowrap animate-carousal-10 md:animate-carousal-20 lg:animate-carousal-30 relative"
@@ -23,13 +25,15 @@
       </div>
     </div>
   </div>
+
   <div class="lg:py-20 py-12 lg:px-0 px-4 text-center">
     <p class="lg:text-32px text-24px font-NunitoWebBold leading-1.19 text-0d172b">How do Idea NFTs benefit you?</p>
     <div class="lg:mt-20 mt-10 flex lg:flex-row flex-col lg:gap-75px gap-48px justify-center">
+      
       <div>
         <div class="flex rounded-lg border border-d9e8ee justify-between">
           <div class="bg-f8fbfc lg:px-29px px-6 py-37px rounded-l-lg">
-            <Creativity />
+            <!-- <Creativity /> -->
           </div>
           <div class="lg:pl-29px pl-4 lg:pr-6 pr-4">
             <p class="mt-29px text-right font-NunitoWebBold text-14px leading-1.29 text-4072b9">
@@ -37,9 +41,10 @@
               <br />
               is drying up!
             </p>
-            <ConfusedPeppy class="mt-4" />
+            <!-- <ConfusedPeppy class="mt-4" /> -->
           </div>
         </div>
+
         <div class="lg:mt-8 mt-6 text-left">
           <p class="font-NunitoWebBold text-20px leading-1.2 text-233040">Demonstrate your creativity</p>
           <p class="lg:mt-4 mt-2 font-LatoWebRegular text-16px text-46515a leading-1.5">

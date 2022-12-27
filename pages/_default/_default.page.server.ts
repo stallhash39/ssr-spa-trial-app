@@ -21,13 +21,16 @@ export async function render(pageContext: PageContextBuiltIn & PageContext) {
 
   const page = createPageApp(pageContext, false);
   const pageHtml = pageContext.Page ? await renderToString(page) : "";
-  console.log("Current _default-server-side Client:Boolean", pageHtml == null);
+
+  console.log("Current _default-server-side Client:Boolean", pageHtml == "");
+
+  // console.log("dangerouslySkipEscape --- ", dangerouslySkipEscape(pageHtml) );
 
 
   const title = pageContext.exports.title ? pageContext.exports.title + " — " : "";
   const faviconUrl = import.meta.env.BASE_URL + "logo.svg";
 
-  return escapeInject`
+  const documentHTML =  escapeInject`
     <!DOCTYPE html>
     <html lang="en">
       <head>
@@ -48,4 +51,9 @@ export async function render(pageContext: PageContextBuiltIn & PageContext) {
       </body>
     </html>
   `;
+
+
+  return documentHTML;
+
+  
 }

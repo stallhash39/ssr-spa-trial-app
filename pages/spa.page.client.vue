@@ -5,5 +5,16 @@
 
 
 <script setup lang="ts">
-import InlineCode from "/components/InlineCode.vue";
+  import InlineCode from "/components/InlineCode.vue";
+
+  import { useStore } from 'vuex';
+  import { onMounted, inject, watch, computed } from 'vue';
+  const store = useStore();
+
+  onMounted(() => {
+    console.log("440 SPA mounted is working ");
+
+    store.dispatch("SIGNIN_USER", {});
+  });
+
 </script>

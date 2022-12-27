@@ -10,6 +10,9 @@ import { usePageContext, setPageContext } from './usePageContext';
 // TIMESTAMP LOG
 import { scaffold } from '../../utils/scaffold';
 
+// Import VUEX-STORE
+import { store } from '../../store/ideaNft/index';
+
 // Define Create Function for SSR or SPA
 export function createPageApp(pageContext: PageContextBuiltIn & PageContext, clientOnly: boolean) {
 
@@ -20,9 +23,6 @@ export function createPageApp(pageContext: PageContextBuiltIn & PageContext, cli
 
   const AppComponent = {
     render() {
-      const renderLayoutSlot = () => h(PageComponent, pageProps || {});
-      console.log("renderLayoutSlot", renderLayoutSlot);
-
       return h(
         PageShell, 
         {}, 
@@ -41,7 +41,8 @@ export function createPageApp(pageContext: PageContextBuiltIn & PageContext, cli
   // return page;
 
   scaffold(page);
-  setPageContext(page, pageContext)
+  page.use(store);
 
+  setPageContext(page, pageContext);
   return page; 
 }
