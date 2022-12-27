@@ -5,25 +5,7 @@ import { createSSRApp, createApp, h } from "vue";
 import LayoutComponent from "/components/Layout.vue";
 import PageShell from './PageShell.vue'
 
-// usePageContext - Starts Here
-
-import { inject } from 'vue'
-
-export { usePageContext }
-export { setPageContext }
-
-const key = Symbol()
-
-function usePageContext() {
-  const pageContext = inject(key)
-  return pageContext
-}
-function setPageContext(app:any, pageContext:any) {
-  app.provide(key, pageContext)
-}
-
-// usePageContext - Ends Here
-
+import { usePageContext, setPageContext } from './usePageContext';
 
 // Define Create Function for SSR or SPA
 export function createPageApp(pageContext: PageContextBuiltIn & PageContext, clientOnly: boolean) {
